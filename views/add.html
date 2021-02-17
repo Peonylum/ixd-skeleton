@@ -11,7 +11,7 @@
         form {
             border: 2px solid #f2aa3d;
             background-color: #e5e5e5;
-            height: 90vh;
+            flex-grow: 1;
         }
 
         form * {
@@ -22,26 +22,34 @@
             background-color: #c9dec6;
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 97vh;
+        }
+
     </style>
 </head>
 <body>
     <h1>Add A Task</h1>
     <form>
+        <!-- for and id used to associate label and form inputs -->
+        <!-- name is used to send information to server -->
         <label for="task_name">Task Name:</label>
-        <input type="text" name="name" id="task_name">
+        <input type="text" name="name" id="task_name" required="required" />
         <label for="task_dscrp">Task Description:</label>
         <textarea name="dscrp" id="task_dscrp" cols="30" rows="10"></textarea>
         <label for="assign_to">Task Name:</label>
-        <input type="text" name="assign" id="assign_to" placeholder="@Name">
+        <input type="text" name="assign" id="assign_to" placeholder="@Name" required="required" />
         <label for="priority">Priority:</label>
-        <select name="priority" id="priority">
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
+        <select name="priority" id="priority" required="required">
             <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
         </select>
         <label for="calendar">Complete By:</label>
-        <input type="date" name="calendar" id="calendar">
-        <input type="submit" value="Add Task">
+        <input type="date" name="calendar" id="calendar" required="required" />
+        <input type="submit" value="Add Task" required="required" />
     </form>
 </body>
 </html>
