@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        form {
+            border: 2px solid #f2aa3d;
+            background-color: #e5e5e5;
+            height: 90vh;
+        }
+
+        form * {
+            display: block;
+        }
+
+        input[type="submit"] {
+            background-color: #c9dec6;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Add A Task</h1>
+    <form>
+        <label for="task_name">Task Name:</label>
+        <input type="text" name="name" id="task_name">
+        <label for="task_dscrp">Task Description:</label>
+        <textarea name="dscrp" id="task_dscrp" cols="30" rows="10"></textarea>
+        <label for="assign_to">Task Name:</label>
+        <input type="text" name="assign" id="assign_to" placeholder="@Name">
+        <label for="priority">Priority:</label>
+        <select name="priority" id="priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <label for="calendar">Complete By:</label>
+        <input type="date" name="calendar" id="calendar">
+        <input type="submit" value="Add Task">
+    </form>
+</body>
+</html>
