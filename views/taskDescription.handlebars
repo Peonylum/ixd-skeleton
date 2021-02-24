@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Task</title>
+    <style>
+        nav {
+            font-size: larger;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 10px;
+            margin-bottom: 30px;
+        }
+
+        nav h1 {
+            margin-left: 50px;
+        }
+
+        #container {
+            font-size: xx-large;
+            height: 300px;
+            margin-bottom: 50px;
+            border: solid black 2px;
+            background-color: rgb(226, 226, 226);
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+        }
+
+        #container p {
+            margin-top: -5px;
+        }
+
+        #edit {
+            margin-left: 102px;
+            font-size: larger;
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.7802 2.65978C11.2712 2.16877 11.2701 1.37235 10.7777 0.882731V0.882731C10.2871 0.394882 9.4942 0.396199 9.00522 0.885675L1.41278 8.48579C0.63241 9.26695 0.63273 10.5327 1.4135 11.3135L9.015 18.915C9.50377 19.4038 10.2962 19.4038 10.785 18.915V18.915C11.2738 18.4262 11.2738 17.6338 10.785 17.145L4.95421 11.3142C4.17316 10.5332 4.17317 9.26683 4.95421 8.48579L10.7802 2.65978Z"
+                    fill="black" />
+            </svg>
+        </a>
+        <h1>
+            <script>
+                document.write(localStorage.getItem("taskName"));
+            </script>
+        </h1>
+    </nav>
+
+    <main>
+        <div id="container">
+            <p>
+                <script>
+                    document.write(localStorage.getItem("taskCreator"));
+                </script>
+            </p>
+            <p>
+                <script>
+                    document.write(localStorage.getItem("taskAssignee"));
+                </script>
+            </p>
+            <p>
+                <script>
+                    document.write(localStorage.getItem("taskPriority"));
+                </script>
+            </p>
+        </div>
+    </main>
+
+    <button id="edit">Edit Task</button>
+
+    <script src="js/editTask.js"></script>
+</body>
+
+</html>

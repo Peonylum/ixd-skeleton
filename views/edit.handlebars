@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add A Task</title>
+    <title>Edit A Task</title>
 
     <style>
+        nav {
+            font-size: larger;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 10px;
+            margin-bottom: 30px;
+        }
 
+        nav h1 {
+            margin-left: 50px;
+        }
         form {
             border: 2px solid #000000;
             background-color: #e5e5e5;
@@ -34,28 +46,28 @@
             flex-direction: column;
             height: 97vh;
         }
-
     </style>
 </head>
+
 <body>
-    <!-- THIS IS FOR THE BACK BUTTON!!! 
-        <a href="/">
+    <nav>
+        <a href="/taskDescription">
             <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M10.7802 2.65978C11.2712 2.16877 11.2701 1.37235 10.7777 0.882731V0.882731C10.2871 0.394882 9.4942 0.396199 9.00522 0.885675L1.41278 8.48579C0.63241 9.26695 0.63273 10.5327 1.4135 11.3135L9.015 18.915C9.50377 19.4038 10.2962 19.4038 10.785 18.915V18.915C11.2738 18.4262 11.2738 17.6338 10.785 17.145L4.95421 11.3142C4.17316 10.5332 4.17317 9.26683 4.95421 8.48579L10.7802 2.65978Z"
                     fill="black" />
             </svg>
         </a>
-    -->
-    <h1>Add A Task</h1>
+        <h1>Edit A Task</h1>
+    </nav>
     <form>
         <!-- for and id used to associate label and form inputs -->
         <!-- name is used to send information to server -->
         <label for="task_name">Task Name:</label>
-        <input type="text" name="name" id="task_name" required="required"/>
+        <input type="text" name="name" id="task_name" required="required" />
         <label for="task_dscrp">Task Description:</label>
         <textarea name="dscrp" id="task_dscrp" cols="30" rows="10"></textarea>
-        <label for="assign_to">Assign To:</label>
+        <label for="assign_to">Task Name:</label>
         <input type="text" name="assign" id="assign_to" placeholder="@Name" required="required" />
         <label for="priority">Priority:</label>
         <select name="priority" id="priority" required="required">
@@ -68,4 +80,5 @@
         <input type="submit" value="Add Task" required="required" />
     </form>
 </body>
+
 </html>
