@@ -14,6 +14,7 @@ var scoreboard = require('./routes/scoreboard');
 var taskDescription = require('./routes/taskDescription');
 var edit = require('./routes/edit');
 var login = require('./routes/login');
+var createGroup = require('./routes/createGroup');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +47,7 @@ app.get('/scoreboard', scoreboard.view);
 app.get('/taskDescription', taskDescription.view);
 app.get('/edit', edit.view);
 app.get('/login',login.view);
+app.get('/createGroup', createGroup.view);
 
 // Example route
 // app.get('/users', user.list);
