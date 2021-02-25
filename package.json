@@ -12,12 +12,15 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.x",
+    "express": "^3.21.2",
     "express3-handlebars": "*",
-    "mongodb": "*",
-    "mongoose": "*"
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.18"
   },
   "engines": {
     "node": "8.9.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

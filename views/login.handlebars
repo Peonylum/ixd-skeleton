@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            justify-content: space-evenly;
+            height: 360px;
+            padding: 15px;
+            margin-top: 60px;
+            border: solid black 2px;
+            background-color: rgb(209, 205, 205);
+        }
+
+        label {
+            margin-left: 10px;
+            font-size: xx-large;
+        }
+
+        #password, #login-name {
+            margin-left: 10px;
+            font-size: x-large;
+            height: 40px;
+            width: 292px;
+        }
+
+        #login-button {
+            font-size: xx-large;
+            width: 300px;
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>DB & J</h1>
+    <hr>
+    <form action="add">
+        <label for="login-name">Username:</label>
+        <input type="text" name="login-name" id="login-name" required="required" placeholder="Jane Doe"/>
+        <label for="password">Password:</label>
+        <input type="text" name="password" id="password" required="required" placeholder="Password"/>
+        <input id="login-button" type="submit" value="Login" required="required"/>
+    </form>
+</body>
+
+</html>
