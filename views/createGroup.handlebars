@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Group</title>
+
+    <style>
+        #exit-group {
+            font-size: x-large;
+            margin-left: 300px;
+            margin-top: -25px;
+        }
+
+        #container {
+            margin-top: 40px;
+            font-size: xx-large;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            height: 650px;
+            border: solid black 2px;
+            background-color: rgb(207, 206, 206);
+        }
+
+        #group-name {
+            text-align: center;
+            font-size: large;
+            height: 30px;
+            width: 300px;
+        }
+
+        .share {
+            font-size: large;
+            width: 300px;
+            height: 50px;
+        }
+
+        dialog {
+            background-color: rgb(172, 169, 169);
+            position: absolute;
+            top: 32%;
+            font-size: xx-large;
+            text-align: center;
+            width: 280px;
+        }
+
+        dialog button {
+            font-size: large;
+            width: 100px;
+            height: 30px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <button id="exit-group" onclick="exitGroup()">
+            X
+        </button>
+        We have successfully created your invite link!
+        <label for="group-name">Group Name:</label>
+        <input type="text" name="group-name" id="group-name" placeholder="Team-12" autofocus />
+        Share Invite:
+        <input type="button" class = "share" id="copy-link" value="Copy Link" onclick="redirect(this.id)" />
+        <input type="button" class = "share" id="fb-link" value="Send via Facebook" onclick="redirect(this.id)"/>
+        <input type="button" class = "share" id="email-link" value="Send via Email" onclick="redirect(this.id)"/>
+    </div>
+
+    <dialog id="empty-name">
+        Input A Group Name!
+        <br/>
+        <button id="empty-close" onclick="closeModal(this.id)">
+            OK
+        </button>
+    </dialog>
+
+    <dialog id="copy-link-dialog">
+        Link Copied!
+        <br/>
+        <button id="copy-link-close" onclick="closeModal(this.id)">
+            OK
+        </button>
+    </dialog>
+
+    <dialog id="fb-dialog">
+        Facebook
+        <br/>
+        <button id="fb-close" onclick="closeModal(this.id)">
+            OK
+        </button>
+    </dialog>
+
+    <dialog id="email-dialog">
+        Email
+        <br/>
+        <button id="email-close" onclick="closeModal(this.id)">
+            OK
+        </button>
+    </dialog>
+
+    <script>
+        const groupName = document.getElementById('group-name');
+        const emptyBox = document.getElementById('empty-name');
+        const copyBox = document.getElementById('copy-link-dialog');
+        const fbBox = document.getElementById('fb-dialog');
+        const emailBox = document.getElementById('email-dialog');
+
+        function redirect(idVal) {
+            if (groupName.value !== '') {
+                switch (idVal) {
+                    case "copy-link":
+                        copyBox.style.display = "block";
+                        break;
+                    case "fb-link":
+                        fbBox.style.display = "block";
+                        break;
+                    case "email-link":
+                        emailBox.style.display = "block";
+                        break;
+                }
+            }
+            else {
+                emptyBox.style.display = "block";
+            }
+        }
+
+        function exitGroup() {
+            if(groupName.value == '') {
+                emptyBox.style.display = "block";
+                return;
+            }
+            
+            window.location.href = "/"
+        }
+
+        function closeModal(idVal) {
+            switch (idVal) {
+                case "empty-close": 
+                    emptyBox.style.display = "none";
+                    groupName.focus();
+                    return;
+                case "copy-link-close":
+                    copyBox.style.display = "none";
+                    break;
+                case "fb-close": 
+                    fbBox.style.display = "none";
+                    break;
+                case "email-close": 
+                    emailBox.style.display = "none";
+                    break;
+            }
+
+            window.location.href = "/"
+        }
+    </script>
+</body>
+
+</html>
