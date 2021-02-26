@@ -36,5 +36,20 @@ exports.addTask = function(req, res) {
 }
 
 exports.deleteTask = function(req, res) {
-  console.log(req.body.testing);
+  console.log(req.body.name);
+
+  let deleteIndex;
+  data.tasks.forEach( (obj, index) => {
+      console.log(obj);
+      if(obj.name === req.body.name) {
+            deleteIndex = index;
+      }
+  })
+  if(deleteIndex !== undefined) {
+    data.tasks.splice(deleteIndex, 1);
+  }
+  
+  console.log(data.tasks);
+  res.send(data);
+
 }
