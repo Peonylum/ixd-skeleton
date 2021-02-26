@@ -47,11 +47,9 @@ app.get('/scoreboard', scoreboard.view);
 app.get('/taskDescription', taskDescription.view);
 app.get('/edit', edit.view);
 app.get('/login',login.view);
-<<<<<<< HEAD
 app.post('/', index.addTask);
-=======
 app.get('/createGroup', createGroup.view);
->>>>>>> 6bcde0175b19f7debf5956eede5731601952395c
+app.delete('/', index.deleteTask);
 
 // Example route
 // app.get('/users', user.list);

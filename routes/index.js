@@ -34,3 +34,7 @@ exports.addTask = function(req, res) {
 
   res.render('tasks', data);
 }
+
+exports.deleteTask = function(req, res) {
+  console.log(req.body.testing);
+}
