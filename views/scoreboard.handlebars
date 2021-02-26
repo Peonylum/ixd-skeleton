@@ -1,21 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        nav {
+            font-size: larger;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            margin-bottom: 5px;
+        }
+
+        nav h1 {
+            margin-left: 50px;
+        }
+
+        .score {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        ol {
+            padding-left: 15px;
+        }
+
+        .box {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 10px;
+            margin-left: 30px;
+            margin-right: 20px;
+            border: 2px solid #000;
+            width: 100%;
+            -list-style-type: none;        
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <!-- THIS IS FOR THE BACK BUTTON!!! 
-        <a href="/">
-            <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M10.7802 2.65978C11.2712 2.16877 11.2701 1.37235 10.7777 0.882731V0.882731C10.2871 0.394882 9.4942 0.396199 9.00522 0.885675L1.41278 8.48579C0.63241 9.26695 0.63273 10.5327 1.4135 11.3135L9.015 18.915C9.50377 19.4038 10.2962 19.4038 10.785 18.915V18.915C11.2738 18.4262 11.2738 17.6338 10.785 17.145L4.95421 11.3142C4.17316 10.5332 4.17317 9.26683 4.95421 8.48579L10.7802 2.65978Z"
-                    fill="black" />
-            </svg>
-        </a>
-    -->
-    <h1>Scoreboard</h1>
+    <nav>
+        <!-- THIS IS FOR THE BACK BUTTON!!! -->
+            <a href="/">
+                <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.7802 2.65978C11.2712 2.16877 11.2701 1.37235 10.7777 0.882731V0.882731C10.2871 0.394882 9.4942 0.396199 9.00522 0.885675L1.41278 8.48579C0.63241 9.26695 0.63273 10.5327 1.4135 11.3135L9.015 18.915C9.50377 19.4038 10.2962 19.4038 10.785 18.915V18.915C11.2738 18.4262 11.2738 17.6338 10.785 17.145L4.95421 11.3142C4.17316 10.5332 4.17317 9.26683 4.95421 8.48579L10.7802 2.65978Z"
+                        fill="black" />
+                </svg>
+            </a>
+        <h1>Scoreboard</h1>
+    </nav>
+
+    <ol>
+        <li class="score">
+            <h2>#1</h2>
+            <div class="box">
+                <h3>Erin</h3>
+                <p>Tasks Completed: 10</p>
+            </div>
+        </li>
+
+        <li class="score">
+            <h2>#2</h2>
+            <div class="box">
+                <h3>Jaime</h3>
+                <p>Tasks Completed: 6</p>
+            </div>
+        </li>
+
+        <li class="score">
+            <h2>#3</h2>
+            <div class="box">
+                <h3>Peony</h3>
+                <p>Tasks Completed: 3</p>
+            </div>
+        </li>
+
+        <li class="score">
+            <h2>#4</h2>
+            <div class="box">
+                <h3>Russell</h3>
+                <p>Tasks Completed: 0</p>
+            </div>
+        </li>
+    </ol>
+    <p class="message">Complete more tasks to move up!</p>
 </body>
 </html>
