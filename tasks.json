@@ -1,0 +1,31 @@
+{
+    "tasks": [
+      {
+        "name": "Take out trash",
+        "dscrp": "Plea",
+        "creator": "@Erin",
+        "assign": "@Everyone",
+        "priority": "Medium",
+        "calendar": "2021-02-25",
+        "completed": false
+      },
+      {
+        "name": "Design Buds!!",
+        "dscrp": "Hang out!",
+        "creator": "@Erin",
+        "assign": "@Peony",
+        "priority": "High",
+        "calendar": "2021-02-26",
+        "completed": true
+      },
+      {
+        "name": "Do the Dishes",
+        "dscrp": "Scrubba dub dub",
+        "creator": "@Jaime",
+        "assign": "@Erin",
+        "priority": "High",
+        "calendar": "2021-02-25",
+        "completed": true
+      }
+    ]
+}

@@ -46,6 +46,7 @@ app.get('/scoreboard', scoreboard.view);
 app.get('/taskDescription', taskDescription.view);
 app.get('/edit', edit.view);
 app.get('/login',login.view);
+app.post('/', index.addTask);
 
 // Example route
 // app.get('/users', user.list);
