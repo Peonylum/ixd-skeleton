@@ -1,16 +1,16 @@
-let deleteDialog = document.querySelector('dialog');
+let deleteDialog = document.querySelector('#delete-dialog');
 
-document.querySelector('#delete').addEventListener('click', () => deleteDialog.showModal());
+document.querySelector('#delete').addEventListener('click', () => deleteDialog.style.display = "block");
 
 let no = deleteDialog.querySelectorAll('button')[0];
 let yes = deleteDialog.querySelectorAll('button')[1];
 
-no.addEventListener('click', () => deleteDialog.close());
+no.addEventListener('click', () => deleteDialog.style.display = "none");
 yes.addEventListener('click', () => {
 
     let taskName = document.querySelector('h1').innerHTML;
     console.log("taskName: " + taskName);
-    data = {"name": taskName};
+    let data = {"name": taskName};
     
     /*var data = require('../tasks.json');
 
