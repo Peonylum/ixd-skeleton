@@ -11,20 +11,6 @@ yes.addEventListener('click', () => {
     let taskName = document.querySelector('h1').innerHTML;
     console.log("taskName: " + taskName);
     let data = {"name": taskName};
-    
-    /*var data = require('../tasks.json');
-
-    let deleteIndex;
-    data.tasks.forEach( (obj, index) => {
-        console.log(obj);
-        if(obj.name === taskName) {
-            deleteIndex = index;
-        }
-    })
-    data.tasks.splice(deleteIndex, 1);
-    console.log(data.tasks);
-    window.location.href = "/";
-    */
 
     fetch('/', {
         method: 'DELETE',
@@ -35,5 +21,4 @@ yes.addEventListener('click', () => {
     })
     .then(res => window.location.href = "/");
 
-    deleteDialog.close();
 });
