@@ -95,7 +95,7 @@
 
         taskName.value = localStorage.getItem('taskName');
         taskDesc.value = localStorage.getItem('taskDescription');
-        taskAssign.value = fullAssignee.substr(fullAssignee.indexOf('@'));
+        taskAssign.value = fullAssignee.substr(fullAssignee.indexOf(':') + 2);
         taskPriority.value = fullPriority.substr(0, fullPriority.indexOf(' '));
         date.value = fullDate.substr(fullDate.indexOf(':') + 2);
         taskId.value = localStorage.getItem('taskId');
