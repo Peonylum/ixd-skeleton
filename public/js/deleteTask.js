@@ -8,17 +8,11 @@ let yes = deleteDialog.querySelectorAll('button')[1];
 no.addEventListener('click', () => deleteDialog.style.display = "none");
 yes.addEventListener('click', () => {
 
-    let taskName = document.querySelector('h1').innerHTML;
-    console.log("taskName: " + taskName);
-    let data = {"name": taskName};
+    let taskId = localStorage.getItem('taskId');
 
-    fetch('/', {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+    fetch(`tasks/${taskId}`, {
+        method: 'DELETE'
     })
-    .then(res => window.location.href = "/");
+    .then(res => window.location.href = "/home");
 
 });

@@ -61,7 +61,7 @@
         </a>
         <h1>Edit A Task</h1>
     </nav>
-    <form action="/edit" method="POST">
+    <form>
         <!-- for and id used to associate label and form inputs -->
         <!-- name is used to send information to server -->
         <label for="task_name">Task Name:</label>
@@ -99,6 +99,22 @@
         taskPriority.value = fullPriority.substr(0, fullPriority.indexOf(' '));
         date.value = fullDate.substr(fullDate.indexOf(':') + 2);
         taskId.value = localStorage.getItem('taskId');
+
+        let editForm = document.forms[0];
+        editForm.addEventListener('submit', (e) => {
+            
+            e.preventDefault();
+            let taskId = localStorage.getItem('taskId');
+            
+            // Used this to figure out how to correclty send form data:
+            // https://stackoverflow.com/questions/46640024/how-do-i-post-form-data-with-fetch-api
+            fetch(`tasks/${taskId}`, {
+                method: 'PUT',
+                body: new URLSearchParams(new FormData(editForm))
+            })
+            .then(res => window.location.href = "/home");
+        });
+
     </script>
 </body>
 
