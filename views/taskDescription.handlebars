@@ -55,6 +55,17 @@
             display: flex;
             margin-left: 5px;
         }
+
+        #delete-dialog {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: solid black 2px;
+            top: 35%;
+            left: 4%;
+            font-size: larger;
+            padding: 10px;
+        }
     </style>
 
 </head>
@@ -69,36 +80,16 @@
             </svg>
         </a>
         <h1>
-            <!--
-            <script>
-                document.write(localStorage.getItem("taskName"));
-            </script>
-            -->
         </h1>
     </nav>
 
     <main>
         <div id="container">
             <p>
-                <!--
-                <script>
-                    document.write(localStorage.getItem("taskCreator"));
-                </script>
-                -->
             </p>
             <p>
-               <!--
-                <script>
-                    document.write(localStorage.getItem("taskAssignee"));
-                </script>
-                -->
             </p>
             <p>
-                <!--
-                <script>
-                    document.write(localStorage.getItem("taskPriority"));
-                </script>
-                -->
             </p>
         </div>
     </main>
@@ -107,11 +98,11 @@
         <button id="edit">Edit Task</button>
         <button id="delete">Delete Task</button>
     </div>
-    <dialog>
+    <div id="delete-dialog">
         <p>Are you sure you want to delete this task?</p>
         <button>No</button>
         <button>Yes</button>
-    </dialog>
+    </div>
 
     <script src="js/editTask.js"></script>
     <script src="js/deleteTask.js"></script>

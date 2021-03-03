@@ -3,13 +3,13 @@
  * GET home page.
  */
 
- var data = require('../tasks.json')
+var data = require('../tasks.json')
 
-exports.view = function(req, res) {
+exports.view = function (req, res) {
   res.render('tasks', data);
 };
 
-exports.addTask = function(req, res) {
+exports.addTask = function (req, res) {
 
   let creator;
   if (req.body.creator === undefined) {
@@ -29,27 +29,29 @@ exports.addTask = function(req, res) {
     "assign": req.body.assign,
     "priority": priority,
     "calendar": req.body.calendar,
-    "completed": false
+    "completed": false,
+    "id": Date.now()
   });
 
   res.render('tasks', data);
 }
 
-exports.deleteTask = function(req, res) {
+exports.deleteTask = function (req, res) {
   console.log(req.body.name);
 
   let deleteIndex;
-  data.tasks.forEach( (obj, index) => {
-      console.log(obj);
-      if(obj.name === req.body.name) {
-            deleteIndex = index;
-      }
+  data.tasks.forEach((obj, index) => {
+    console.log(obj);
+    if (obj.name === req.body.name) {
+      deleteIndex = index;
+    }
   })
-  if(deleteIndex !== undefined) {
+  if (deleteIndex !== undefined) {
     data.tasks.splice(deleteIndex, 1);
   }
-  
+
   console.log(data.tasks);
   res.send(data);
 
 }
+

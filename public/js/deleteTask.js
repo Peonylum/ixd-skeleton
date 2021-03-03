@@ -1,30 +1,16 @@
-let deleteDialog = document.querySelector('dialog');
+let deleteDialog = document.querySelector('#delete-dialog');
 
-document.querySelector('#delete').addEventListener('click', () => deleteDialog.showModal());
+document.querySelector('#delete').addEventListener('click', () => deleteDialog.style.display = "block");
 
 let no = deleteDialog.querySelectorAll('button')[0];
 let yes = deleteDialog.querySelectorAll('button')[1];
 
-no.addEventListener('click', () => deleteDialog.close());
+no.addEventListener('click', () => deleteDialog.style.display = "none");
 yes.addEventListener('click', () => {
 
     let taskName = document.querySelector('h1').innerHTML;
     console.log("taskName: " + taskName);
-    data = {"name": taskName};
-    
-    /*var data = require('../tasks.json');
-
-    let deleteIndex;
-    data.tasks.forEach( (obj, index) => {
-        console.log(obj);
-        if(obj.name === taskName) {
-            deleteIndex = index;
-        }
-    })
-    data.tasks.splice(deleteIndex, 1);
-    console.log(data.tasks);
-    window.location.href = "/";
-    */
+    let data = {"name": taskName};
 
     fetch('/', {
         method: 'DELETE',
@@ -35,5 +21,4 @@ yes.addEventListener('click', () => {
     })
     .then(res => window.location.href = "/");
 
-    deleteDialog.close();
 });

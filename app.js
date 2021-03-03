@@ -50,6 +50,7 @@ app.get('/login',login.view);
 app.post('/', index.addTask);
 app.get('/createGroup', createGroup.view);
 app.delete('/', index.deleteTask);
+app.post('/edit', edit.editTask);
 
 // Example route
 // app.get('/users', user.list);
