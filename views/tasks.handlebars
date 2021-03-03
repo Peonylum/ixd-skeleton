@@ -10,6 +10,8 @@
     <style>
         body {
             height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         nav {
@@ -49,20 +51,28 @@
         }
 
         .taskDescription:link,
-        .taskDescription:visited {
+        .taskDescription:visited,
+        .add-button:link,
+        .add-button:visited {
             color: black;
             text-decoration: none;
         }
 
         #add-button {
-            position: fixed;
-            bottom: 7%;
-            right: 2%;
             height: fit-content;
             border: solid black 1px;
-            border-radius: 100px;
+            border-radius: 8px;
             padding: 9px;
-            box-shadow: -5px 6px 5px -2px #888888;
+            display: flex;
+            align-items: center;
+            font-size: larger;
+            width: 360px;
+            margin-bottom: 10px;
+        }
+
+        #add-icon {
+            margin-left: 30%;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -95,7 +105,17 @@
             </svg>
         </a>
     </nav>
-
+    <div>
+        <a href="add" class="add-button">
+            <button id="add-button">
+                <svg height="20pt" viewBox="0 0 448 448" width="20pt" xmlns="http://www.w3.org/2000/svg" id="add-icon">
+                    <path
+                        d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0" />
+                </svg>
+                Add Task
+            </button>
+        </a>
+    </div>
     <details>
         <summary id="completed-tasks">All</summary>
 
@@ -192,14 +212,7 @@
         {{/each}}
 
     </details>
-    <a href="add">
-        <button id="add-button">
-            <svg height="20pt" viewBox="0 0 448 448" width="20pt" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0" />
-            </svg>
-        </button>
-    </a>
+
     <script src="js/displayTask.js"></script>
 </body>
 
