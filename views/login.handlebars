@@ -43,11 +43,24 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
+
+        .fb-login-button {
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
     </style>
+
+    <script src="/js/facebook.js"></script>
 </head>
 
 <body>
-    <h1>DB & J</h1>
+    <!-- Includes Facebook's JavaScript SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=203124458232070&autoLogAppEvents=1" nonce="smPEGUrJ"></script>
+    
+    <h1>Homey</h1>
     <hr>
     <div id="container">
         <label for="login-name">Username:</label>
@@ -55,6 +68,12 @@
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required="required" placeholder="Password" minlength="5"/>
         <input id="login-button" type="button" value="Login" required="required" disabled onclick="window.location.href = '/createGroup'"/>
+    
+        <!-- Facebook button -->
+        <fb:login-button class="fb-login-button" data-width="300px" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();">
+            Log in With Facebook
+        </fb:login-button>
+        
     </div>
 
     <script>
