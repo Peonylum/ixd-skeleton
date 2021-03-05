@@ -123,7 +123,7 @@
         {{#each tasks}}
         <div class="task">
             <h2 class="task-name">{{name}}</h2>
-            <p class="description">{{dscrp}}</p>
+            <p class="description" style="display: none;">{{dscrp}}</p>
             <p class="priority">{{priority}} Priority</p>
             <p class="creator">Created by: {{creator}}</p>
             <p class="assignee">Assigned to: {{assign}}</p>
@@ -155,7 +155,7 @@
         {{#unless completed}}
         <div class="task">
             <h2 class="task-name">{{name}}</h2>
-            <p class="description">{{dscrp}}</p>
+            <p class="description" style="display: none;">{{dscrp}}</p>
             <p class="priority">{{priority}} Priority</p>
             <p class="creator">Created by: {{creator}}</p>
             <p class="assignee">Assigned to: {{assign}}</p>
@@ -188,7 +188,7 @@
         {{#if completed}}
         <div class="task">
             <h2 class="task-name">{{name}}</h2>
-            <p class="description">{{dscrp}}</p>
+            <p class="description" style="display: none;">{{dscrp}}</p>
             <p class="priority">{{priority}} Priority</p>
             <p class="creator">Created by: {{creator}}</p>
             <p class="assignee">Assigned to: {{assign}}</p>
