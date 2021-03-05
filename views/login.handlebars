@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
+        * {
+            font-family: 'Trebuchet MS'
+        }
+        
         h1 {
             text-align: center;
         }
@@ -18,30 +22,58 @@
             justify-content: space-evenly;
             height: 360px;
             padding: 15px;
-            margin-top: 60px;
-            border: solid black 2px;
-            background-color: rgb(209, 205, 205);
+            background-color: white;
+        }
+
+        #container div {
+            margin-left: 35px;
         }
 
         label {
             margin-left: 10px;
             font-size: xx-large;
+            margin-bottom: 10px;
         }
 
-        #password,
+        #password {
+            margin-left: 10px;
+            font-size: x-large;
+            height: 40px;
+            width: 292px;
+            margin-bottom: 15px;
+            border: solid gray 1px;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
         #login-name {
             margin-left: 10px;
             font-size: x-large;
             height: 40px;
             width: 292px;
+            margin-bottom: 35px;
+            border: solid gray 1px;
+            border-radius: 5px;
+            padding: 8px;
         }
 
         #login-button {
-            font-size: xx-large;
+            font-size: x-large;
             width: 300px;
             margin-left: 10px;
             margin-top: 20px;
             margin-bottom: 10px;
+            background-color: #4A169F;
+            border: solid #4A169F 2px;
+            border-radius: 5px;
+            color: white;
+            padding: 5px;
+        }
+
+        #login-button:disabled {
+            background-color: lightgray;
+            border: solid lightgray 2px;
+            color: darkgray;
         }
 
         .fb-login-button {
@@ -49,7 +81,6 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
-        
     </style>
 
     <script src="/js/facebook.js"></script>
@@ -58,22 +89,50 @@
 <body>
     <!-- Includes Facebook's JavaScript SDK -->
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=203124458232070&autoLogAppEvents=1" nonce="smPEGUrJ"></script>
-    
-    <h1>Homey</h1>
-    <hr>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=203124458232070&autoLogAppEvents=1"
+        nonce="smPEGUrJ"></script>
+
+    <h1>
+        <svg width="188" height="91" viewBox="0 0 188 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+                <path
+                    d="M13.4271 38.0937C15.9618 35.4375 19.0608 34.1094 22.724 34.1094C25.6406 34.1094 27.8715 34.9514 29.4167 36.6354C30.9618 38.3194 31.7344 40.7674 31.7344 43.9792V62H26.7083V44.3437C26.7083 42.3125 26.2917 40.8368 25.4583 39.9167C24.625 38.9965 23.2882 38.5365 21.4479 38.5365C19.816 38.5365 18.2882 38.901 16.8646 39.6302C15.441 40.3594 14.2951 41.3663 13.4271 42.651V62H8.42708V21.7917H13.4271V38.0937ZM50.8229 34.0573C54.9375 34.0573 58.1319 35.3073 60.4063 37.8073C62.6806 40.2899 63.8177 43.7708 63.8177 48.25C63.8177 52.7292 62.6806 56.2101 60.4063 58.6927C58.1319 61.1753 54.9375 62.4167 50.8229 62.4167C46.691 62.4167 43.4878 61.1753 41.2135 58.6927C38.9392 56.2101 37.8021 52.7292 37.8021 48.25C37.8021 43.7708 38.9392 40.2899 41.2135 37.8073C43.4878 35.3073 46.691 34.0573 50.8229 34.0573ZM50.8229 38.4844C48.2535 38.4844 46.2917 39.3177 44.9375 40.9844C43.6007 42.651 42.9323 45.0729 42.9323 48.25C42.9323 51.4097 43.6007 53.8229 44.9375 55.4896C46.2917 57.1562 48.2535 57.9896 50.8229 57.9896C53.375 57.9896 55.3281 57.1562 56.6823 55.4896C58.0365 53.8229 58.7135 51.4097 58.7135 48.25C58.7135 45.0903 58.0365 42.6771 56.6823 41.0104C55.3281 39.3264 53.375 38.4844 50.8229 38.4844ZM75.1458 38.3802C77.559 35.533 80.5799 34.1094 84.2083 34.1094C88.375 34.1094 91.1875 35.724 92.6458 38.9531C95.1285 35.724 98.3056 34.1094 102.177 34.1094C105.233 34.1094 107.55 34.9427 109.13 36.6094C110.727 38.276 111.526 40.7326 111.526 43.9792V62H106.5V44.3437C106.5 42.3125 106.083 40.8368 105.25 39.9167C104.417 38.9965 103.08 38.5365 101.24 38.5365C99.6076 38.5365 98.1146 38.8924 96.7604 39.6042C95.4063 40.316 94.3038 41.3316 93.4531 42.651C93.4531 42.7205 93.4705 42.8854 93.5052 43.1458C93.5399 43.4062 93.5573 43.7535 93.5573 44.1875V62H88.5313V44.3437C88.5313 42.3125 88.1146 40.8368 87.2813 39.9167C86.4479 38.9965 85.1024 38.5365 83.2448 38.5365C81.6823 38.5365 80.2066 38.901 78.8177 39.6302C77.4462 40.3594 76.3438 41.349 75.5104 42.599V62H70.5104V34.5781H74.5729L75.1458 38.3802ZM122.724 49.1875C122.863 52.0347 123.627 54.2135 125.016 55.724C126.405 57.2344 128.358 57.9896 130.875 57.9896C132.264 57.9896 133.601 57.842 134.885 57.5469C136.188 57.2517 137.663 56.7483 139.313 56.0365L140.901 59.7604C139.009 60.6806 137.238 61.3576 135.589 61.7917C133.939 62.2083 132.281 62.4167 130.615 62.4167C126.483 62.4167 123.28 61.1753 121.005 58.6927C118.731 56.2101 117.594 52.7292 117.594 48.25C117.594 43.7708 118.714 40.2986 120.953 37.8333C123.193 35.3507 126.361 34.1094 130.458 34.1094C134.295 34.1094 137.151 35.2639 139.026 37.5729C140.918 39.8819 141.865 43.3802 141.865 48.0677V49.1875H122.724ZM136.682 44.9948C136.543 42.8594 135.936 41.2535 134.859 40.1771C133.8 39.0833 132.333 38.5365 130.458 38.5365C126.292 38.5365 123.8 40.6892 122.984 44.9948H136.682ZM148.323 22H153.323V62H148.323V22ZM168.688 62L158.271 34.5781H163.245L166.76 44.1354L167.672 46.5833L171.083 56.1406L172.203 52.7812C172.377 52.2431 172.759 51.0972 173.349 49.3437C173.939 47.5729 174.556 45.8368 175.198 44.1354L178.766 34.5781H183.766L168.531 74.5781H164L168.688 62Z"
+                    fill="#4A169F" />
+                <path
+                    d="M44.5856 50.2874L49.0918 55.4072C49.1616 55.4866 49.2748 55.4866 49.3447 55.4072L44.5856 50.2874ZM44.5856 50.2874C44.5159 50.2084 44.5159 50.0798 44.5856 50.0004L45.6806 48.7564C45.7505 48.6771 45.8637 48.6771 45.9334 48.7564L48.8631 52.0847L44.5856 50.2874ZM56.6968 46.2471L49.2182 54.7436L45.1698 50.1439L45.807 49.42L48.8181 52.8407L49.2184 53.2955L49.6188 52.8407L56.0597 45.5231L56.6968 46.2471ZM49.4922 55.0548L49.4921 55.0547C49.4922 55.0549 49.4924 55.055 49.4926 55.0552L49.4922 55.0548Z"
+                    fill="white" stroke="#4A169F" stroke-width="1.06667" />
+            </g>
+            <defs>
+                <filter id="filter0_d" x="0" y="0" width="187.766" height="90.1333" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                </filter>
+            </defs>
+        </svg>
+    </h1>
     <div id="container">
         <label for="login-name">Username:</label>
         <input type="text" name="login-name" id="login-name" required="required" placeholder="Jane Doe" />
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required="required" placeholder="Password" minlength="5"/>
-        <input id="login-button" type="button" value="Login" required="required" disabled onclick="window.location.href = '/createGroup'"/>
-    
+        <input type="password" name="password" id="password" required="required" placeholder="Password" minlength="5" />
+        <div>Password must be at least 5 characters</div>
+        <input id="login-button" type="button" value="Login" required="required" disabled
+            onclick="window.location.href = '/home'" />
+
         <!-- Facebook button -->
-        <fb:login-button class="fb-login-button" data-width="300px" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();">
+        <fb:login-button class="fb-login-button" data-width="300px" data-size="large" data-button-type="login_with"
+            data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"
+            scope="public_profile,email" onlogin="checkLoginState();">
             Log in With Facebook
         </fb:login-button>
-        
+
     </div>
 
     <script>
