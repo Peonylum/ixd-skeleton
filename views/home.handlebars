@@ -8,6 +8,10 @@
     <title>Tasks</title>
 
     <style>
+        * {
+            font-family: 'Trebuchet MS'
+        }
+        
         body {
             height: 100vh;
             display: flex;
@@ -18,18 +22,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: #4A169F;
         }
-
-        /*
-        nav svg {
-            margin-top: 20px;
-        }
-        */
 
         details div {
-            background-color: #e5e5e5;
-            border: 2px solid #000;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+            border-radius: 5px;
             margin: 5px;
+            box-shadow: -5px 3px 6px -1px rgba(0, 0, 0, 0.25);
         }
 
         details div * {
@@ -42,8 +43,11 @@
         }
 
         details summary {
-            background-color: #c4c4c4;
-            padding: 5px;
+            background-color: white;
+            padding: 10px;
+            color: #4A169F;
+            font-size: large;
+            border: solid #C4C4C4 1px;
         }
 
         details {
@@ -60,7 +64,7 @@
 
         #add-button {
             height: fit-content;
-            border: solid black 1px;
+            border: solid #4A169F 1px;
             border-radius: 8px;
             padding: 9px;
             display: flex;
@@ -68,10 +72,12 @@
             font-size: larger;
             width: 360px;
             margin-bottom: 10px;
+            background-color: #4A169F;
+            color: white;
         }
 
         #add-icon {
-            margin-left: 30%;
+            margin-left: 35%;
             margin-right: 10px;
         }
     </style>
@@ -91,12 +97,6 @@
             </svg>
         </a>
         <h1>Tasks</h1>
-        {{!-- <a href="add">
-            <svg height="20pt" viewBox="0 0 448 448" width="20pt" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0" />
-            </svg>
-        </a> --}}
         <a href="/">
             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -108,9 +108,10 @@
     <div>
         <a href="add" class="add-button">
             <button id="add-button">
-                <svg height="20pt" viewBox="0 0 448 448" width="20pt" xmlns="http://www.w3.org/2000/svg" id="add-icon">
-                    <path
-                        d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0" />
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="add-icon">
+                    <line x1="8.50001" x2="8.50001" y2="17" stroke="white" stroke-width="2.72" />
+                    <line y1="8.49999" x2="17" y2="8.49999" stroke="white" stroke-width="2.72" />
                 </svg>
                 Add Task
             </button>

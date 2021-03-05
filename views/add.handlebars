@@ -7,11 +7,16 @@
     <title>Add A Task</title>
 
     <style>
+        * {
+            font-family: 'Trebuchet MS'
+        }
 
         form {
-            border: 2px solid #000000;
-            background-color: #e5e5e5;
+            border: 2px solid white;
+            background-color: white;
             flex-grow: 1;
+            font-size: large;
+            padding-left: 20px;
         }
 
         form * {
@@ -24,9 +29,27 @@
             margin-bottom: 5px;
         }
 
+        label[for="task_name"] {
+            margin-top: 0px;
+        }
+
         input[type="submit"] {
-            background-color: #c0c0c0;
-            margin-top: 15px;
+            background-color: #4A169F;
+            margin-top: 30px;
+            color: white;
+            border: solid #4A169F 1px;
+            border-radius: 5px;
+            font-size: larger;
+            padding: 5px;
+            width: 300px;
+            margin-left: 12px;
+        }
+
+        input[type="text"], textarea {
+            width: 300px;
+            border: solid #c0c0c0 1px;
+            border-radius: 5px;
+            font-size: large;
         }
 
         body {
@@ -40,11 +63,26 @@
             display: flex;
             align-items: center;
             padding-left: 10px;
-            margin-bottom: 5px;
+            color: #4A169F;
         }
 
         nav h1 {
-            margin-left: 50px;
+            margin-left: 90px;
+        }
+
+        #priority {
+            width: 305px;
+            font-size: large;
+            border: solid #c0c0c0 1px;
+            border-radius: 5px; 
+        }
+
+        input[type="date"] {
+            width: 305px;
+            font-size: larger;
+            border: solid #c0c0c0 1px;
+            border-radius: 5px;
+            color: gray;
         }
 
     </style>
@@ -68,7 +106,7 @@
         <label for="task_name">Task Name:</label>
         <input type="text" name="name" id="task_name" required="required"/>
         <label for="task_dscrp">Task Description:</label>
-        <textarea name="dscrp" id="task_dscrp" cols="30" rows="10"></textarea>
+        <textarea name="dscrp" id="task_dscrp" cols="30" rows="8"></textarea>
         <label for="assign_to">Assign To:</label>
         <input type="text" name="assign" id="assign_to" placeholder="@Name" required="required" />
         <label for="priority">Priority:</label>

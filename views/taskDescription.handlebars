@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Description</title>
     <style>
+        * {
+            font-family: 'Trebuchet MS'
+        }
+        
         nav {
             font-size: larger;
             display: flex;
@@ -14,22 +18,25 @@
             align-items: center;
             padding-left: 10px;
             margin-bottom: 30px;
+            color: #4A169F;
         }
 
         nav h1 {
-            margin-left: 50px;
+            margin-left: 70px;
         }
 
         #container {
-            font-size: xx-large;
+            font-size: x-large;
             height: 300px;
             margin-bottom: 50px;
-            border: solid black 2px;
-            background-color: rgb(226, 226, 226);
+            border: 1px solid rgb(190, 189, 189);
+            border-radius: 5px;
+            background-color: white;
             padding-top: 30px;
             display: flex;
             flex-direction: column;
             padding-left: 10px;
+            box-shadow: -5px 3px 6px -1px rgba(0, 0, 0, 0.25);
         }
 
         #container p {
@@ -39,32 +46,53 @@
         #edit {
             margin: 10px;
             font-size: larger;
-            width: 150px;
-            height: 50px;
-
+            width: 320px;
+            height: 45px;
+            margin-left: -80px;
+            background-color: #4A169F;
+            border: solid #4A169F 1px;
+            border-radius: 5px;
+            color: white;
         }
 
         #delete {
             margin: 10px;
             font-size: larger;
             width: 150px;
-            height: 50px;
+            height: 40px;
+            background-color: #DC8400;
+            border: solid #DC8400 1px;
+            border-radius: 5px;
+            color: white;
         }
 
         .buttons {
             display: flex;
-            margin-left: 5px;
+            flex-direction: column;
+            margin-left:100px;
         }
 
         #delete-dialog {
             display: none;
             position: absolute;
-            background-color: white;
-            border: solid black 2px;
+            background-color: rgb(209, 109, 109);
+            border: solid red 1px;
+            border-radius: 5px;
             top: 35%;
             left: 4%;
             font-size: larger;
             padding: 10px;
+            width: 325px;
+        }
+
+        #delete-dialog button {
+            font-size: large;
+            width: 50px;
+        }
+
+        #no-delete {
+            margin-left: 105px;
+            margin-right: 15px;
         }
     </style>
 
@@ -100,7 +128,7 @@
     </div>
     <div id="delete-dialog">
         <p>Are you sure you want to delete this task?</p>
-        <button>No</button>
+        <button id="no-delete">No</button>
         <button>Yes</button>
     </div>
 
