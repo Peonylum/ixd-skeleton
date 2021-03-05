@@ -113,12 +113,10 @@
 
     <main>
         <div id="container">
-            <p>
-            </p>
-            <p>
-            </p>
-            <p>
-            </p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
         </div>
     </main>
 
@@ -135,11 +133,16 @@
     <script src="js/editTask.js"></script>
     <script src="js/deleteTask.js"></script>
     <script>
+
+        // Set task name
         document.querySelector('h1').innerHTML = localStorage.getItem('taskName');
+
+        // Set task information
         let categories = document.querySelectorAll("p");
-        categories[0].innerHTML = localStorage.getItem("taskCreator");
-        categories[1].innerHTML = localStorage.getItem("taskAssignee");
-        categories[2].innerHTML = localStorage.getItem("taskPriority");
+        categories[0].innerHTML = localStorage.getItem('taskDescription');
+        categories[1].innerHTML = localStorage.getItem('taskPriority');
+        categories[2].innerHTML = localStorage.getItem('taskCreator');
+        categories[3].innerHTML = localStorage.getItem('taskAssignee');
     </script>
 </body>
 

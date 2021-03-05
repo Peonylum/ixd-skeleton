@@ -56,6 +56,7 @@ router.delete('/:taskId', (req, res) => {
 
 
 router.put('/:taskId', (req, res) => {
+    console.log(req.body);
 
     // Find the index of the task to edit
     let editIndex;
@@ -74,10 +75,13 @@ router.put('/:taskId', (req, res) => {
         element.assign = req.body.assign;
         element.priority = priority;
         element.calendar = req.body.calendar;
-        element.completed = false;
+        
+        // Account for when req.body.completed is true after clicking checkmark
+        element.completed = req.body.completed || false;
     }
     
-    res.end()
+    console.log(data);
+    res.end();
 });
 
 module.exports = router;
