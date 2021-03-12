@@ -41,7 +41,7 @@ document.querySelector('main').addEventListener('click', e => {
     let completedTask = {
         "name": task.firstElementChild.textContent,
         "dscrp": taskInfo.firstElementChild.textContent,
-        "priority": taskInfo.children[1].textContent,
+        "priority": taskInfo.children[1].textContent.slice(0, -9),
         "creator": taskInfo.children[2].textContent.slice(12),
         "assign": taskInfo.children[3].textContent.slice(13),
         "calendar": taskInfo.children[4].textContent.slice(8),
