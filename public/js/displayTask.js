@@ -22,8 +22,8 @@ document.querySelectorAll('.task .task-info').forEach((o,i) => {
 
 document.querySelector('main').addEventListener('click', e => {
 
-    // Get the SVG with data-completed equal to false
-    let checkMarkSVG = e.target.closest('[data-completed="false"]');
+    // Get the SVG with data-completed
+    let checkMarkSVG = e.target.closest('[data-completed]');
 
     // Check if it exists
     if (!checkMarkSVG) {
@@ -31,14 +31,16 @@ document.querySelector('main').addEventListener('click', e => {
         return;
     }
 
-
     // Use to grab task information
     let task = checkMarkSVG.parentElement;
     let taskInfo = task.children[1];
     let taskId = taskInfo.lastElementChild.textContent;
 
-    // Newly updated task object (Only change is that it's completed)
-    let completedTask = {
+    // Can also do this instead: checkMarkSVG.dataset.completed !== 'true' but not as readable
+    let taskCompleted = checkMarkSVG.dataset.completed === 'true' ? false : true;
+
+    // Newly updated task object (Only change is the completed property)
+    let updatedTask = {
         "name": task.firstElementChild.textContent,
         "dscrp": taskInfo.firstElementChild.textContent,
         "priority": taskInfo.children[1].textContent.slice(0, -9),
@@ -46,7 +48,7 @@ document.querySelector('main').addEventListener('click', e => {
         "assign": taskInfo.children[3].textContent.slice(13),
         "calendar": taskInfo.children[4].textContent.slice(8),
         "id": taskId,
-        "completed": true
+        "completed": taskCompleted
     };
 
     // Update array on server and reload page to see changes
@@ -55,7 +57,7 @@ document.querySelector('main').addEventListener('click', e => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(completedTask)
+        body: JSON.stringify(updatedTask)
     })
     .then(res => {
         window.location.href = '/home';
